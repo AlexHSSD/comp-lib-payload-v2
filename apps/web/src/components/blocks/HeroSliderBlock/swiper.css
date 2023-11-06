@@ -1,0 +1,14 @@
+
+
+:is(.hero-dot-active):where([class~=red] *) {
+  background: #4f5959;
+  border-color: #4f5959;
+}
+:is(.hero-dot-active):where([class~=green] *) {
+  background: #4f5959;
+  border-color: #4f5959;
+}
+:is(.hero-dot-active):where([class~=grey] *) {
+  background: #7BB69D;
+  border-color: #7BB69D;
+}

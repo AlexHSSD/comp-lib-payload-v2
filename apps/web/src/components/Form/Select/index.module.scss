@@ -1,0 +1,115 @@
+.reactSelect {
+  display: flex;
+
+  :global {
+    div.rs__control {
+      font-size: 1rem; border: 1px solid #000;
+      background: #fff;
+      color: #000;
+      padding: 4px;
+      height: auto;
+      width: 100%;
+    }
+
+    .rs__input-container {
+      color: #000;
+    }
+
+    .rs__value-container {
+      padding: 0;
+      > * {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+
+    .rs__single-value {
+      color: #000;
+    }
+
+    .rs__indicators {
+      position: absolute;
+      top: .5rem;
+      right: .5rem;
+      .arrow {
+        transform: rotate(90deg);
+      }
+    }
+
+    .rs__indicator {
+      padding: 0px 4px;
+      cursor: pointer;
+
+      svg path {
+        fill: #bcbbb5;
+      }
+
+      &:hover {
+        svg path {
+          fill: #bcbbb5;
+        }
+      }
+    }
+
+    .rs__indicator-separator {
+      display: none;
+    }
+
+    .rs__menu {
+      color: #000;
+      background-color: #fff;
+      z-index: 2;
+      border-radius: 0;
+      box-shadow: 0 4px 11px hsl(0deg 0% 0% / 10%);
+    }
+
+    .rs__menu-list {
+      padding: 6px 0;
+    }
+
+    .rs__group-heading {
+      margin-bottom: 12px;
+    }
+
+    .rs__option {
+      font-size: 1rem;
+      padding: 12px 24px;
+
+      &--is-focused {
+        background-color: #eee;
+        color: #000;
+      }
+
+      &--is-selected {
+        background-color: #eee;
+        color: #000;
+      }
+    }
+
+    .rs__multi-value {
+      padding: 0;
+      background: #eee;
+    }
+
+    .rs__multi-value__label {
+      max-width: 150px;
+      color: #000;
+      padding: 3px 6px;
+    }
+
+    .rs__multi-value__remove {
+      cursor: pointer;
+
+      &:hover {
+        color: #000;
+        background: #eee;
+      }
+    }
+
+    .rs__clear-indicator {
+      cursor: pointer;
+    }
+  }
+}

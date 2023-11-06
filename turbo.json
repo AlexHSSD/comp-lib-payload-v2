@@ -1,0 +1,46 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalEnv": [
+    "MONGODB_URI",
+    "PORT",
+    "PAYLOAD_LOCAL_PORT",
+    "PAYLOAD_SECRET",
+    "PAYLOAD_PUBLIC_SITE_URL",
+    "PAYLOAD_PUBLIC_SERVER_URL",
+    "NEXT_PUBLIC_CMS_URL",
+    "NEXT_PUBLIC_SITE_URL",
+    "NEXT_PRIVATE_REGENERATION_SECRET",
+    "PAYLOAD_PRIVATE_REGENERATION_SECRET",
+    "PAYLOAD_MAILGUN_API_KEY",
+    "PAYLOAD_MAILGUN_SENDING_DOMAIN",
+    "PAYLOAD_MAILGUN_URL",
+    "NEXT_PUBLIC_AZURE_BLOB_URL",
+    "NEXT_PUBLIC_AZURE_STORAGE_CONTAINER_NAME",
+    "AZURE_STORAGE_CONNECTION_STRING",
+    "AZURE_STORAGE_CONTAINER_NAME",
+    "AZURE_STORAGE_ALLOW_CONTAINER_CREATE",
+    "AZURE_STORAGE_ACCOUNT_BASEURL",
+    "NEXT_PUBLIC_GA_ID",
+    "NODE_ENV"
+  ],
+  "pipeline": {
+    "build": {
+      "cache": false,
+      "dependsOn": ["^build"],
+      "outputs": [".next/**", "!.next/cache/**"]
+    },
+    "serve": {},
+    "lint": {},
+    "format": {
+      "dependsOn": ["^cms#generate:types"]
+    },
+    "start": {},
+    "dev": {
+      "dependsOn": ["cms#generate:types", "lint", "format"],
+      "cache": false,
+      "persistent": true
+    },
+    "generate:types": {},
+    "check-types": {}
+  }
+}

@@ -1,0 +1,92 @@
+.reactSelect {
+  display: flex;
+}
+.reactSelect :global div.rs__control {
+  font-size: 1rem;
+  border: 1px solid #000;
+  background: #fff;
+  color: #000;
+  padding: 4px;
+  height: auto;
+  width: 100%;
+}
+.reactSelect :global .rs__input-container {
+  color: #000;
+}
+.reactSelect :global .rs__value-container {
+  padding: 0;
+}
+.reactSelect :global .rs__value-container > * {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.reactSelect :global .rs__single-value {
+  color: #000;
+}
+.reactSelect :global .rs__indicators {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+.reactSelect :global .rs__indicators .arrow {
+  transform: rotate(90deg);
+}
+.reactSelect :global .rs__indicator {
+  padding: 0px 4px;
+  cursor: pointer;
+}
+.reactSelect :global .rs__indicator svg path {
+  fill: #bcbbb5;
+}
+.reactSelect :global .rs__indicator:hover svg path {
+  fill: #bcbbb5;
+}
+.reactSelect :global .rs__indicator-separator {
+  display: none;
+}
+.reactSelect :global .rs__menu {
+  color: #000;
+  background-color: #fff;
+  z-index: 2;
+  border-radius: 0;
+  box-shadow: 0 4px 11px hsla(0deg, 0%, 0%, 0.1);
+}
+.reactSelect :global .rs__menu-list {
+  padding: 6px 0;
+}
+.reactSelect :global .rs__group-heading {
+  margin-bottom: 12px;
+}
+.reactSelect :global .rs__option {
+  font-size: 1rem;
+  padding: 12px 24px;
+}
+.reactSelect :global .rs__option--is-focused {
+  background-color: #eee;
+  color: #000;
+}
+.reactSelect :global .rs__option--is-selected {
+  background-color: #eee;
+  color: #000;
+}
+.reactSelect :global .rs__multi-value {
+  padding: 0;
+  background: #eee;
+}
+.reactSelect :global .rs__multi-value__label {
+  max-width: 150px;
+  color: #000;
+  padding: 3px 6px;
+}
+.reactSelect :global .rs__multi-value__remove {
+  cursor: pointer;
+}
+.reactSelect :global .rs__multi-value__remove:hover {
+  color: #000;
+  background: #eee;
+}
+.reactSelect :global .rs__clear-indicator {
+  cursor: pointer;
+}/*# sourceMappingURL=index.module.css.map */

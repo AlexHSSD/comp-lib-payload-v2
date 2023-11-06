@@ -1,0 +1,10 @@
+{
+  "name": "payload-types",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "main": "./payload-types.ts",
+  "publishConfig": {
+    "access": "public"
+  }
+}

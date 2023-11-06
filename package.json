@@ -1,0 +1,46 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "dotenv -- turbo run build",
+    "serve": "dotenv -- turbo run serve",
+    "build:web": "dotenv -- turbo run build --filter=web",
+    "build:cms": "dotenv -- turbo run build --filter=cms",
+    "serve:cms": "dotenv -- turbo run serve --filter=cms",
+    "start:web": "dotenv -- turbo run start --filter=web",
+    "start:cms": "dotenv -- turbo run serve --filter=cms",
+    "dev": "dotenv -- turbo run dev",
+    "lint": "turbo run lint",
+    "check-types": "turbo run check-types",
+    "generate:types": "turbo run generate:types",
+    "format": "turbo run format"
+  },
+  "devDependencies": {
+    "@turbo/gen": "^1.9.7",
+    "dotenv-cli": "latest",
+    "eslint": "^7.32.0",
+    "eslint-config-custom": "workspace:*",
+    "prettier": "^2.5.1",
+    "turbo": "latest"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "peerDependenciesMeta": {
+    "express": {
+      "optional": true
+    }
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "express"
+      ]
+    }
+  },
+  "packageManager": "pnpm@7.15.0",
+  "name": "cmx-payload-split",
+  "dependencies": {
+    "react-alice-carousel": "^2.7.1",
+    "swiper": "^10.3.1"
+  }
+}
