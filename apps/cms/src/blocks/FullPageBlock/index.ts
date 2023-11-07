@@ -1,7 +1,11 @@
 import type { Block } from 'payload/types'
 import linkGroup from '../../fields/linkGroup'
 import { blockFields } from '../../fields/blockFields'
-import richText from '../../fields/richText'
+import richText from '../../fields/lexicalRichText'
+import { defaultFeatures } from '../../fields/lexicalRichText/defaultFeatures'
+import {
+  lexicalEditor
+} from '@payloadcms/richtext-lexical'
 
 export const FullPageBlock: Block = {
   slug: 'fullPageBlock',
@@ -97,7 +101,17 @@ export const FullPageBlock: Block = {
           name: 'title',
           type: 'text'
         },
-        richText(),
+        {
+          name: 'content',
+          type: 'richText',
+          label: 'Content',
+          // Pass the Lexical editor here and override base settings as necessary
+          editor: lexicalEditor({
+            features: () => [
+              ...defaultFeatures,
+            ],
+          })
+        },
         {
           name: 'enableLink',
           type: 'checkbox',

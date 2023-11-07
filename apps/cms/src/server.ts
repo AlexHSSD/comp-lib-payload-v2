@@ -1,6 +1,5 @@
 import express from 'express';
 import payload from 'payload';
-import email from './email/transport';
 import path from 'path';
 
 require('dotenv').config();
@@ -20,8 +19,11 @@ const start = async () => {
   await payload.init({
     // Make sure that your environment variables are filled out accordingly
     secret: process.env.PAYLOAD_SECRET as string,
-    mongoURL: process.env.MONGODB_URI as string,
-    email: email,
+    email: {
+      fromName: 'Local PayloadCMS',
+      fromAddress: 'david.barton@surescreen.com',
+      logMockCredentials: true,
+    },
     express: app,
     onInit: () => {
       payload.logger.info(`Payload Admin URL: ${payload.getAdminURL()}`)

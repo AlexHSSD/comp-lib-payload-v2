@@ -1,8 +1,11 @@
 import type { Block } from 'payload/types'
-import richText from '../../../fields/richText'
 import { blockFields } from '../../../fields/blockFields'
 import linkGroup from '../../../fields/linkGroup'
-
+import richText from '../../../fields/lexicalRichText'
+import { defaultFeatures } from '../../../fields/lexicalRichText/defaultFeatures'
+import {
+  lexicalEditor
+} from '@payloadcms/richtext-lexical'
 
 export const StandardBlock: Block = {
   slug: 'standardBlock',
@@ -57,7 +60,17 @@ export const StandardBlock: Block = {
           label: 'Title (optional)',
           type: 'text',
         },
-        richText(),
+        {
+          name: 'content',
+          type: 'richText',
+          label: 'Content',
+          // Pass the Lexical editor here and override base settings as necessary
+          editor: lexicalEditor({
+            features: () => [
+              ...defaultFeatures,
+            ],
+          })
+        },   
         {
           name: 'enableLink',
           type: 'checkbox',

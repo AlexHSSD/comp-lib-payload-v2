@@ -1,5 +1,9 @@
 import path from 'path'
 import type { CollectionConfig } from 'payload/types'
+import { defaultFeatures } from '../fields/lexicalRichText/defaultFeatures'
+import {
+  lexicalEditor
+} from '@payloadcms/richtext-lexical'
 
 export const Media: CollectionConfig = {
   slug: 'media',
@@ -18,9 +22,13 @@ export const Media: CollectionConfig = {
     {
       name: 'caption',
       type: 'richText',
-      admin: {
-        elements: ['link'],
-      },
+      label: 'Caption',
+      // Pass the Lexical editor here and override base settings as necessary
+      editor: lexicalEditor({
+        features: () => [
+          ...defaultFeatures,
+        ],
+      })
     },
   ],
 }
