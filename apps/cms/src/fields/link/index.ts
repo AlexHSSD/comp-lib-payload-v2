@@ -75,7 +75,7 @@ const link: LinkType = ({ enableAppearance = false, disableLabel = false, overri
       name: 'reference',
       label: 'Document to link to',
       type: 'relationship',
-      relationTo: ['pages', 'tests', 'blogs'],
+      relationTo: ['pages', 'tests'],
       required: true,
       maxDepth: 1,
       admin: {

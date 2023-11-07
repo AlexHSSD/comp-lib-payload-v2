@@ -8,7 +8,6 @@ import type {
 import { GLOBALS } from "@/graphql/globals";
 import { PAGE, PAGES } from "@/graphql/pages";
 import { TEST, TESTS } from "@/graphql/tests";
-import { BLOG, BLOGS } from "@/graphql/blogs";
 
 const REVALIDATE_TIME = 3600;
 
@@ -138,32 +137,6 @@ export const fetchTests = async (): Promise<
   return data.Tests.docs;
 };
 
-export const fetchBlogs = async (): Promise<
-  Array<{ breadcrumbs: Blog["breadcrumbs"]; slug: string }>
-> => {
-  const { data, errors } = await fetch(
-    `${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?blogs`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        query: BLOGS,
-      }),
-      next: {
-        tags: ["all", "blogs"],
-      },
-    }
-  ).then((res) => res.json());
-
-  if (errors) {
-    console.error(JSON.stringify(errors)); // eslint-disable-line no-console
-    throw new Error();
-  }
-  return data.Blogs.docs;
-};
-
 export const fetchTest = async (
   incomingSlugSegments?: string[]
 ): Promise<Test | null> => {
@@ -214,61 +187,6 @@ export const fetchTest = async (
 
   if (test) {
     return test;
-  }
-
-  return null;
-};
-
-export const fetchBlog = async (
-  incomingSlugSegments?: string[]
-): Promise<Blog | null> => {
-  const slugSegments = incomingSlugSegments || [""];
-  const slug = slugSegments.at(-1);
-  if (!slug) {
-    return null;
-  }
-  const { data, errors } = await fetch(
-    `${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?blog=${slug}`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      next: {
-        tags: ["all", "blogs"],
-      },
-      body: JSON.stringify({
-        query: BLOG,
-        variables: {
-          slug,
-        },
-      }),
-    }
-  ).then((res) => {
-    return res.json();
-  });
-
-  if (errors) {
-    console.error(JSON.stringify(errors)); // eslint-disable-line no-console
-    throw new Error();
-  }
-
-  const blogPath = `/${slugSegments.join("/")}`;
-  const blog = data.Blogs?.docs.find(
-    ({ slug: blogSlug, breadcrumbs }: Blog) => {
-      if (
-        !breadcrumbs ||
-        !breadcrumbs.length ||
-        breadcrumbs.filter((b) => b.url).length > 0
-      )
-        return blogSlug === slug;
-      const { url } = breadcrumbs[breadcrumbs.length - 1];
-      return url === blogPath;
-    }
-  );
-
-  if (blog) {
-    return blog;
   }
 
   return null;

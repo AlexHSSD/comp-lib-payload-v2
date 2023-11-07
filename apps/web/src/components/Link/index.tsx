@@ -15,11 +15,6 @@ type TestReference = {
   relationTo: "tests";
 };
 
-type BlogReference = {
-  value: string | Blog;
-  relationTo: "blogs";
-};
-
 export type LinkType = "reference" | "custom";
 export type Reference = PageReference;
 
@@ -68,21 +63,6 @@ const generateHref = (args: GenerateSlugType): string => {
 
     if (reference.relationTo === "tests") {
       const value = reference.value as Test;
-      const breadcrumbs = value?.breadcrumbs;
-      const hasBreadcrumbs =
-        breadcrumbs &&
-        Array.isArray(breadcrumbs) &&
-        breadcrumbs.length > 0 &&
-        breadcrumbs.filter((b) => b.url).length > 0;
-      if (hasBreadcrumbs) {
-        return `/${reference.relationTo}/${
-          breadcrumbs[breadcrumbs.length - 1]?.url
-        }` as string;
-      }
-    }
-
-    if (reference.relationTo === "blogs") {
-      const value = reference.value as Blog;
       const breadcrumbs = value?.breadcrumbs;
       const hasBreadcrumbs =
         breadcrumbs &&

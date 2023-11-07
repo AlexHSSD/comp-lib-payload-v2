@@ -19,7 +19,6 @@ import { Footer } from './globals/Footer'
 import { Header } from './globals/Header'
 
 import { Pages } from './collections/Pages'
-import { Blogs } from './collections/Blogs'
 import { Tests } from './collections/Tests'
 import { Media } from './collections/Media'
 import { revalidateTag } from './utilities/revalidateTag';
@@ -59,7 +58,7 @@ export default buildConfig({
       titleSuffix: '- Component Library - PayloadCMS',
     },
   },
-  collections: [Users, Pages, Blogs, Tests, Media],
+  collections: [Users, Pages, Tests, Media],
   globals: [
     Footer, Header,
     // Your globals here
@@ -77,10 +76,10 @@ export default buildConfig({
       generateURL: docs => docs.reduce((url, doc) => `${url}/${doc.slug}`, ''),
     }),
     redirects({
-      collections: ['pages' , 'blogs', 'tests'],
+      collections: ['pages' , 'tests'],
     }),
     seo({
-      collections: ['pages' , 'blogs', 'tests'],
+      collections: ['pages' , 'tests'],
       generateTitle,
       uploadsCollection: 'media',
       tabbedUI: true,
