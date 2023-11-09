@@ -9,6 +9,9 @@ export const Media: CollectionConfig = {
   slug: 'media',
   upload: {
     staticDir: path.resolve(__dirname, '../../media'),
+    resizeOptions: {
+      width: 2000,
+    }
   },
   access: {
     read: () => true,

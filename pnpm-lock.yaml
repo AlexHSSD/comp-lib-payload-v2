@@ -47,21 +47,21 @@ importers:
       eslint-plugin-simple-import-sort: ^10.0.0
       express: ^4.17.1
       nodemon: ^2.0.6
-      payload: ^2.0.15
+      payload: ^2.1.0
       prettier: ^2.7.1
       react: 18.2.0
       ts-node: ^9.1.1
       typescript: ^4.8.4
     dependencies:
       '@azure/storage-blob': 12.16.0
-      '@payloadcms/bundler-webpack': 1.0.5_rdqbljob7azamrmvdlreundmqy
-      '@payloadcms/db-mongodb': 1.0.6_payload@2.0.15
-      '@payloadcms/richtext-lexical': 0.1.16_2tn2cnhi2kkdmsjqzc5qvnem6i
+      '@payloadcms/bundler-webpack': 1.0.5_xqglsdw46l7tpjqnkfc7uok674
+      '@payloadcms/db-mongodb': 1.0.6_payload@2.1.0
+      '@payloadcms/richtext-lexical': 0.1.16_n6xgiyjy6cqp5b33euy4c5rjfi
       copyfiles: 2.4.1
       cross-env: 7.0.3
       dotenv: 8.6.0
       express: 4.18.2
-      payload: 2.0.15_fadjof6q5jor4w3rpqgwrrqy3i
+      payload: 2.1.0_fadjof6q5jor4w3rpqgwrrqy3i
       react: 18.2.0
     devDependencies:
       '@payloadcms/eslint-config': 1.0.0_typescript@4.9.5
@@ -2037,7 +2037,7 @@ packages:
     engines: {node: '>=8.0.0'}
     dev: false
 
-  /@payloadcms/bundler-webpack/1.0.5_rdqbljob7azamrmvdlreundmqy:
+  /@payloadcms/bundler-webpack/1.0.5_xqglsdw46l7tpjqnkfc7uok674:
     resolution: {integrity: sha512-TjzRTGRDQPrxGoMZ+fV76Pzx3nXC37oSZe/+dA/5HM18fRA9vlu/z54r8HHvThZc7ywx0iRiSwgPZYzQu5xUVQ==}
     peerDependencies:
       payload: ^2.0.0
@@ -2052,7 +2052,7 @@ packages:
       md5: 2.3.0
       mini-css-extract-plugin: 1.6.2_webpack@5.89.0
       path-browserify: 1.0.1
-      payload: 2.0.15_fadjof6q5jor4w3rpqgwrrqy3i
+      payload: 2.1.0_fadjof6q5jor4w3rpqgwrrqy3i
       postcss: 8.4.31
       postcss-loader: 6.2.1_gjb34yy4giimcl3qb6uykccrrq
       postcss-preset-env: 9.0.0_postcss@8.4.31
@@ -2089,7 +2089,7 @@ packages:
       - webpack-dev-server
     dev: false
 
-  /@payloadcms/db-mongodb/1.0.6_payload@2.0.15:
+  /@payloadcms/db-mongodb/1.0.6_payload@2.1.0:
     resolution: {integrity: sha512-9rcXNygPBbOkTcf6vMpv1ZaCmKx+BWVm6z5lflHZsi/udPGF7aL+3m7kCTD9N2qi4rDewfdxbifime2benKWYw==}
     peerDependencies:
       payload: ^2.0.0
@@ -2100,7 +2100,7 @@ packages:
       mongoose: 6.12.0
       mongoose-aggregate-paginate-v2: 1.0.6
       mongoose-paginate-v2: 1.7.22
-      payload: 2.0.15_fadjof6q5jor4w3rpqgwrrqy3i
+      payload: 2.1.0_fadjof6q5jor4w3rpqgwrrqy3i
       prompts: 2.4.2
       uuid: 9.0.0
     transitivePeerDependencies:
@@ -2151,7 +2151,7 @@ packages:
       react: 18.2.0
     dev: true
 
-  /@payloadcms/richtext-lexical/0.1.16_2tn2cnhi2kkdmsjqzc5qvnem6i:
+  /@payloadcms/richtext-lexical/0.1.16_n6xgiyjy6cqp5b33euy4c5rjfi:
     resolution: {integrity: sha512-y4OLWD2U7qNBwGP9qCwPGD8h93zXaS5RZ4UdLqcAAjwBP8B2O5ZbO+Th6AeDKdEc0O2BJivT89kLrNJRhMv1Sg==}
     peerDependencies:
       payload: ^2.0.14
@@ -2172,7 +2172,7 @@ packages:
       i18next: 22.5.1
       lexical: 0.12.2
       lodash: 4.17.21
-      payload: 2.0.15_fadjof6q5jor4w3rpqgwrrqy3i
+      payload: 2.1.0_fadjof6q5jor4w3rpqgwrrqy3i
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-error-boundary: 4.0.11_react@18.2.0
@@ -9029,8 +9029,8 @@ packages:
       - webpack-dev-server
     dev: true
 
-  /payload/2.0.15_fadjof6q5jor4w3rpqgwrrqy3i:
-    resolution: {integrity: sha512-P+FEMr79y5FQJ6NJm7KhQZqmEvU3BXkGZT7Kbj5MCeCpbP0TlboAMWThdzr9jaGgHK2Y5uGRMCzeW0880mnKZg==}
+  /payload/2.1.0_fadjof6q5jor4w3rpqgwrrqy3i:
+    resolution: {integrity: sha512-FJnjilO6f0nSKGqbeCoShghawJI1OjSzM5LhcXu8UYS4jmAD43wTkov0+8eTspnQSLKWvBui8VfkF3jgeqv4CQ==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
@@ -9122,7 +9122,7 @@ packages:
       terser-webpack-plugin: 5.3.9_r4irnnf2adqiadgjy2d2nnraf4
       ts-essentials: 7.0.3_typescript@4.9.5
       use-context-selector: 1.4.1_2szjah6qrhd6fr2kgr64p4pjgm
-      uuid: 8.3.2
+      uuid: 9.0.1
     transitivePeerDependencies:
       - '@swc/helpers'
       - '@types/react'
@@ -12178,6 +12178,11 @@ packages:
 
   /uuid/9.0.0:
     resolution: {integrity: sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==}
+    hasBin: true
+    dev: false
+
+  /uuid/9.0.1:
+    resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
     hasBin: true
     dev: false
 
